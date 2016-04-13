@@ -1,0 +1,22 @@
+1. Wybierz rasê.
+Gracz wybiera rasê z dostêpnych podstawowych ras z Podrêcznika Gracza. Te rasy to: Cz³owiek, Elf, Pó³elf, Pó³ork, Krasnolud, Nizio³ek, Gnom, Diablê, Pó³smok.
+Dodatkowo rasy posiadaj¹ podrasy np. Elf jest Leœny, Drow, Wysokiego Rodu. Ka¿da z ras daje ró¿ne bonusy (np. zwiêkszenie atrybutu, dodatkowe umiejêtnoœci itp)
+
+2. Wybierz klasê.
+Gracz nastêpnie wybiera klasê: Barbarzyñca, Bard, Kleryk, Druid, £owca, Mnich, £otrzyk, Paladyn, Wojownik, Czarodziej, Zaklinacz, Czarnoksiê¿nik.
+- nale¿y wybraæ poziom na którym bêdzie gracz danej klasy np. 5cio poziomowy £otrzyk.
+- dana klase pozwala wybraæ kilka umiejêtnoœci w których postaæ bêdzie bieg³a np. £otrzyk mo¿e byæ bieg³y(i powinien) w umiejêtnoœci Ukrywanie Siê
+Ka¿da klasa ma listê umiejêtnoœci do wyboru z której gracz wybiera pewn¹ iloœæ (£otrzyk wybiera 4, Wojownik 2)
+- ustaliæ Punkty Wytrzyma³oœci (p. ¿ycia, HP). Ka¿da klasa zapewnia pewn¹ pulê punktów ¿ycia zale¿n¹ od rodzaju koœci którymi siê rzuca (np Paladyn losuje PW koœci¹ 10 œcienn¹, K10)
+
+3. Ustal atrybuty
+Gracz ustala pulê atrybutów do rozdania. Ka¿dy posiada 6 atrybutów: Si³a, Zrêcznoœæ, Budowa, Inteligencja, Roztropnoœæ oraz Charyzma (S, Zr,Bd, Int, Rzt, Cha). Jest to najwa¿niejsza czêœæ postaci która decyduje o wiêkszoœci bonusów.
+Program powinien po wpisaniu wartoœci atrybutu policzyæ bonus wg wzoru:
+(Wartoœæ_Atrybutu - 10)/2  zaokr¹glaj¹c w dó³ np. Si³a 10 daje bonus 0, 11 - 0, 12 - (+1), 17 - (+3), 18 - (+4)
+Atrybuty mog¹ mieæ wartoœci od 0 (wtedy gracz jest martwy) do 20
+
+4. Opis postaci
+Tu powinny znaleŸæ siê pola do wype³nienia przez gracza zawieraj¹ce historiê postaci, opis fizyczny i inne. W zale¿noœci od t³a postaci i jej historii gracz powinien dostaæ mo¿liwoœæ dobrania 2 umiejêtnoœci w któych bêdzie bieg³y
+
+5. Ekwipunek
+Ostatni krok to wybraæ ekwipunek. Nasza postaæ musi czymœ walczyæ z potworami i siê czymœ broniæ. Postaæ posiada bronie bliskiego zasiêgu, bronie zasiêgowe, zbrojê, tarczê no i reszta ekwipunku. Zbroja i tarcza wp³ywa na wartoœæ pola Klasa Pancerza.
