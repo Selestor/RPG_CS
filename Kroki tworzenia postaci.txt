@@ -1,3 +1,4 @@
+
 1. Wybierz rasê.
 Gracz wybiera rasê z dostêpnych podstawowych ras z Podrêcznika Gracza. Te rasy to: Cz³owiek, Elf, Pó³elf, Pó³ork, Krasnolud, Nizio³ek, Gnom, Diablê, Pó³smok.
 Dodatkowo rasy posiadaj¹ podrasy np. Elf jest Leœny, Drow, Wysokiego Rodu. Ka¿da z ras daje ró¿ne bonusy (np. zwiêkszenie atrybutu, dodatkowe umiejêtnoœci itp)
