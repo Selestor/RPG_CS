@@ -1,3 +1,11 @@
 .fourColumnsInAList{display:inline-flex;flex-wrap: nowrap;width:calc(100% - 10px - 0.3em)}
 .fourColumnsInAList > div {width:calc(25% - 0.3em); padding-right:0.3em} 
 .fourColumnsInAList-header {font-weight:bold;text-transform:uppercase}
+
+.form-horizontal .control-label {
+    text-align: right;
+}
+.form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}

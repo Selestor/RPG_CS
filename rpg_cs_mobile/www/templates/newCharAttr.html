@@ -1,7 +1,13 @@
-<div class="app">
+<div class="app has-navbar-top has-navbar-bottom">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Kreator postaci - Atrybuty
+            Nowa postać
+        </div>
+		
+		<div class="btn-group pull-right">
+          <div class="btn ng-scope">
+            <i class="fa fa-hourglass-half"></i> Krok 2.
+          </div>
         </div>
     </div>
 
@@ -21,10 +27,42 @@
     </div>
 
     <div class="app-body">
+	
+		
+		<div class="app-content section">
+		
+			<div class="section section-wide">
+				<div class="btn-group justified nav-tabs">
+				  <a ui-toggle="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb normalny
+				  </a>
+				  <a ui-turn-on="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb domowy
+				  </a> 
+				</div>
+			</div>
+			<div class="scrollable-content">
+			
+				<form class="ng-pristine ng-valid form-horizontal" role="form" ng-submit="login()">
+					<fieldset>
+						
+						<legend>Atrybuty</legend>
+						
+						<div class="form-group " ng-repeat="attr in attrList">
+							<label class="col-sm-3 control-label">{{attr.name}}</label>
+							<div class="col-sm-6"><input class="form-control needsclick" placeholder="Wartość (0&ndash;20)" type="number" min="0" max="20"/></div>
+							<div class="col-sm-1">{{attr.value}}</div>
+						</div>
+				  </form>
+			
+			</div>
+		</div>
+	
+	
         <!-- Tutaj atrybutów postaci -->
-        <!-- W zależności od trybu rozgrywki elementy edytowalne, albo nie. Wtedy zgodne z ogólnymi zasadami (patrz mapka od Romana). -->
+        <!-- W zależności od trybu rozgrywki elementy edytowalne, albo nie. Wtedy zgodne z ogólnymi zasadami (patrz mapka od Romana). 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">3/4</h1>
-        </div>
+        </div>-->
     </div>
 </div>
