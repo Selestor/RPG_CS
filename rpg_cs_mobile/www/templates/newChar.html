@@ -1,7 +1,13 @@
-<div class="app">
+<div class="app has-navbar-top">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Kreator postaci
+            Nowa postać
+        </div>
+		
+		<div class="btn-group pull-right">
+          <div class="btn ng-scope">
+            <i class="fa fa-hourglass-start"></i> Krok 1.
+          </div>
         </div>
     </div>
 
@@ -20,9 +26,66 @@
     </div>
 
     <div class="app-body">
-        <!-- Tutaj formularz postaci -->
+		<div class="app-content section">
+		
+			<div class="section section-wide">
+				<div class="btn-group justified nav-tabs">
+				  <a ui-toggle="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb normalny
+				  </a>
+				  <a ui-turn-on="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb domowy
+				  </a> 
+				</div>
+			</div>
+			<div class="scrollable-content">
+			
+				<form class="ng-pristine ng-valid" role="form" ng-submit="login()">
+					<fieldset>
+						
+						<legend>Podstawowe dane</legend>
+						
+						<div class="form-group">
+						  <label>Imię</label>
+						  <input ng-model="name" class="form-control needsclick" placeholder="Wprowadź imię postaci" type="text">
+						</div>
+
+						<div class="form-group">
+						  <label>Rasa</label>
+							<ui-select ng-model="race.selected" theme="bootstrap">
+							<ui-select-match placeholder="Wybierz lub wyszukaj rasę z listy...">{{$select.selected.name}}</ui-select-match>
+							<ui-select-choices group-by="'type'" repeat="item in raceList | filter: $select.search">
+							<span ng-bind-html="item.name | highlight: $select.search"></span>
+							<!--<small ng-bind-html="item.email | highlight: $select.search"></small>-->
+							</ui-select-choices>
+							</ui-select>
+						</div>
+						
+						<div class="form-group">
+						  <label>Klasa</label>
+							<ui-select ng-model="type.selected" theme="bootstrap">
+							<ui-select-match placeholder="Wybierz lub wyszukaj klasę z listy...">{{$select.selected.name}}</ui-select-match>
+							<ui-select-choices repeat="item in typeList | filter: $select.search">
+							<span ng-bind-html="item.name | highlight: $select.search"></span>
+							<!--<small ng-bind-html="item.email | highlight: $select.search"></small>-->
+							</ui-select-choices>
+							</ui-select>
+						</div>
+						
+						<div class="form-group">
+						  <label>Poziom</label>
+						  <input ng-model="level" class="form-control needsclick" placeholder="Na którym poziomie będzie gracz danej klasy?" type="number" min="1">
+						</div>
+					
+
+				  </form>
+			
+			</div>
+		</div>
+	
+        <!-- Tutaj formularz postaci 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">2</h1>
-        </div>
+        </div>-->
     </div>
 </div>

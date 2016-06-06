@@ -2,7 +2,7 @@
  * Created by pyrkap on 28.05.2016.
  */
 
-var mainApp = angular.module('mainApp', ['ngRoute', 'mobile-angular-ui.gestures']);
+var mainApp = angular.module('mainApp', ['ngRoute', 'mobile-angular-ui', 'mobile-angular-ui.gestures', 'ngSanitize', 'ui.select']);
 
 /**
  *
