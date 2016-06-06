@@ -1,4 +1,4 @@
-<div class="app">
+<div class="app has-navbar-top">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
             Lista postaci
@@ -18,10 +18,42 @@
     </div>
 
     <div class="app-body">
-        <!-- Tutaj lista postaci -->
+	<div class="app-content">
+		<div class="scrollable-content section">
+		
+			<div class="list-group">
+				<span class="list-group-item">
+					<div class="fourColumnsInAList fourColumnsInAList-header">
+						<div>Imię</div>
+						<div>Rasa</div>
+						<div>Klasa</div>
+						<div>Poziom</div>
+					</div>
+				</span>
+				<a ng-repeat="item in charList" href="" class="list-group-item" ng-click="goToAttr()">
+					<div class="fourColumnsInAList">
+						<div>{{ item.name }}</div>
+						<div>{{ item.race }}</div>
+						<div>{{ item.type }}</div>
+						<div>{{ item.level }}</div>
+					</div>
+					<i class="fa fa-chevron-right pull-right"></i>
+				</a>
+			</div>
+			
+			<div class="btn-group">
+			  <a href="" class="btn btn-default active" ui-turn-on="button1" ui-state="button1" ui-class="{'active': button1}" ui-exclusion-group="myButtons">1</a>
+			  <a href="" class="btn btn-default" ui-turn-on="button2" ui-state="button2" ui-class="{'active': button2}" ui-exclusion-group="myButtons">2</a>
+			  <a href="" class="btn btn-default" ui-turn-on="button3" ui-state="button3" ui-class="{'active': button3}" ui-exclusion-group="myButtons">3</a>
+			</div>
+		
+		</div>
+		</div>
+	
+        <!-- Tutaj lista postaci 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">1</h1>
             <button class="btn btn-info" ng-click="goToAttr()" style="width: 100%;"><i class="fa fa-info-circle"></i> Przykładowa postać</button>
-        </div>
+        </div>-->
     </div>
 </div>

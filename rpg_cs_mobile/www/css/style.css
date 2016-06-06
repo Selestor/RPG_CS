@@ -1,0 +1,3 @@
+.fourColumnsInAList{display:inline-flex;flex-wrap: nowrap;width:calc(100% - 10px - 0.3em)}
+.fourColumnsInAList > div {width:calc(25% - 0.3em); padding-right:0.3em} 
+.fourColumnsInAList-header {font-weight:bold;text-transform:uppercase}
