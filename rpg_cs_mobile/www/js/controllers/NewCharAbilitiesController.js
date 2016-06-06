@@ -3,5 +3,9 @@
  */
 
 mainApp.controller('NewCharAbilitiesController', function($scope){
-    
+    $scope.abilityList = [
+		{name : 'Religia', isChecked : false},
+		{name : 'Ukrywanie się', isChecked : true},
+		{name : 'Natura', isChecked : false}
+	];
 });

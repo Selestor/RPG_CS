@@ -2,6 +2,7 @@
 .fourColumnsInAList > div {width:calc(25% - 0.3em); padding-right:0.3em} 
 .fourColumnsInAList-header {font-weight:bold;text-transform:uppercase}
 
+.form-horizontal {padding-bottom:50px}
 .form-horizontal .control-label {
     text-align: right;
 }

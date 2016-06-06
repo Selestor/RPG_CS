@@ -1,17 +1,28 @@
-<div class="app">
+<div class="app  has-navbar-top has-navbar-bottom">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Kreator postaci - Umiejętności
+            Nowa postać
+        </div>
+		
+		<div class="btn-group pull-right">
+          <div class="btn ng-scope">
+            <i class="fa fa-hourglass-half"></i> Krok 3.
+          </div>
         </div>
     </div>
 
-    <div class="navbar navbar-app navbar-fixed-bottom">
+    <div class="navbar navbar-app navbar-fixed-bottom" style="text-align:center">
         <div class="btn-group pull-left">
             <div class="btn btn-navbar">
                 <a back class="btn btn-link"><i class="fa fa-caret-left"></i> Wróć</a>
             </div>
         </div>
+		
+        <div class="btn-group">
+		<a class="btn btn-navbar" ui-turn-on="modal1" href="" ><i class="fa fa-plus-circle"></i> Dodaj umiejętność</a>
 
+        </div>
+		
         <div class="btn-group pull-right">
             <div class="btn btn-navbar">
                 <a href="#newCharTrumps" class="btn btn-link">Dalej <i class="fa fa-caret-right"></i></a>
@@ -20,9 +31,71 @@
     </div>
 
     <div class="app-body">
-        <!-- Tutaj formularz umiejętności -->
+		<div class="app-content section">
+		
+			<div class="section section-wide">
+				<div class="btn-group justified nav-tabs">
+				  <a ui-toggle="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb normalny
+				  </a>
+				  <a ui-turn-on="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb domowy
+				  </a> 
+				</div>
+			</div>
+			
+			<div class="scrollable-content">
+			
+			
+				<form class="ng-pristine ng-valid form-horizontal" role="form" ng-submit="login()">
+					<fieldset>
+						
+						<legend>Umiejętności</legend>
+						
+						
+						
+						<div class="form-group " ng-repeat="ability in abilityList">
+							<label class="col-sm-3 control-label">{{ability.name}}</label>
+							<div class="col-sm-6">
+								<ui-switch class="ng-pristine ng-untouched ng-valid ng-isolate-scope switch switch-transition-enabled active" ng-model="ability.isChecked"><div class="switch-handle"></div></ui-switch>
+							</div>
+						</div>
+						
+					</fieldset>
+				</form>
+			
+			
+			</div>
+		</div>
+        <!-- Tutaj formularz umiejętności 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">5</h1>
-        </div>
+        </div>-->
     </div>
+</div>
+<div ui-yield-to="modals"></div>
+<div ui-content-for="modals">
+  <div class="modal" ui-if="modal1" ui-state='modal1'>
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" 
+                  ui-turn-off="modal1">&times;</button>
+          <h4 class="modal-title">Dodaj umiejętność</h4>
+        </div>
+        <div class="modal-body">
+          
+						<div class="form-group">
+						  <label>Nazwa umiejętności</label>
+						  <input ng-model="newAbiblityName" class="form-control needsclick" placeholder="Np. skakanie z mostu" type="text">
+						</div>
+        </div>
+        <div class="modal-footer">
+          <button ui-turn-off="modal1" class="btn btn-default">Anuluj</button>
+          <button ui-turn-off="modal1" class="btn btn-primary">Dodaj umiejętność</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
