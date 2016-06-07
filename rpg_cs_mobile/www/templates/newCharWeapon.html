@@ -1,15 +1,31 @@
-<div class="app">
+<div class="app  has-navbar-top has-navbar-bottom">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Kreator postaci - Broń
+            Nowa postać
+        </div>
+		
+		<div class="btn-group pull-right">
+          <div class="btn ng-scope">
+            <i class="fa fa-hourglass-half"></i> Krok 5.
+          </div>
         </div>
     </div>
 
-    <div class="navbar navbar-app navbar-fixed-bottom">
+    <div class="navbar navbar-app navbar-fixed-bottom" style="text-align:center">
         <div class="btn-group pull-left">
             <div class="btn btn-navbar">
                 <a back class="btn btn-link"><i class="fa fa-caret-left"></i> Wróć</a>
             </div>
+        </div>
+		
+        <div class="btn-group">
+		<a class="btn btn-navbar" ui-turn-on="modal1" href="" ><i class="fa fa-plus-circle"></i> Dodaj broń</a>
+
+        </div>
+		
+        <div class="btn-group">
+		<a class="btn btn-navbar" ui-turn-on="modal2" href="" ><i class="fa fa-plus-circle"></i> Dodaj zbroję</a>
+
         </div>
 
         <div class="btn-group pull-right">
@@ -20,9 +36,186 @@
     </div>
 
     <div class="app-body">
-        <!-- Tutaj formularz broni -->
+	
+	
+	
+		<div class="app-content section">
+		
+			<div class="section section-wide">
+				<div class="btn-group justified nav-tabs">
+				  <a ui-toggle="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb normalny
+				  </a>
+				  <a ui-turn-on="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb domowy
+				  </a> 
+				</div>
+			</div>
+			
+			<div class="scrollable-content">
+			
+			
+				<form class="ng-pristine ng-valid" role="form">
+					<fieldset>
+						
+						<legend>Broń</legend>
+						
+						<ol>
+							<li ng-repeat="weapon in selectedWeapons">{{ weapon.name }}, <small>{{ weapon.type }}, {{ weapon.power }}</small>, <a href="" ng-click="removeFromSelectedWeapons(weapon.name)">usuń</a></li>
+						</ol>
+						
+						
+						<div class="form-group">
+						  <label>Wybierz broń</label>
+							<ui-select ng-model="weapon.selected" theme="bootstrap">
+							<ui-select-match placeholder="Wybierz lub wyszukaj broń z listy...">{{$select.selected.name}}</ui-select-match>
+							<ui-select-choices group-by="'type'" repeat="item in weaponList | filter: $select.search">
+							<span ng-bind-html="item.name | highlight: $select.search"></span>
+							<small ng-bind-html="item.power | highlight: $select.search"></small>
+							</ui-select-choices>
+							</ui-select>
+						</div>
+						
+						<button class="btn btn-primary btn-block" style="margin-bottom:30px !important" ng-click="addToSelectedWeapons()">
+						  Dopisz do listy
+						</button>
+						
+						
+					</fieldset>
+					
+					<fieldset>
+					
+						<legend>Zbroja</legend>
+						
+						
+						<ol>
+							<li ng-repeat="armor in selectedArmors">{{ armor.name }}, <small>{{ armor.type }}, {{ armor.power }}</small>, <a href="" ng-click="removeFromSelectedArmors(armor.name)">usuń</a></li>
+						</ol>
+						
+						
+						<div class="form-group">
+						  <label>Wybierz zbroję</label>
+							<ui-select ng-model="armor.selected" theme="bootstrap">
+							<ui-select-match placeholder="Wybierz lub wyszukaj zbroję z listy...">{{$select.selected.name}}</ui-select-match>
+							<ui-select-choices group-by="'type'" repeat="item in armorList | filter: $select.search">
+							<span ng-bind-html="item.name | highlight: $select.search"></span>
+							<small ng-bind-html="item.power | highlight: $select.search"></small>
+							</ui-select-choices>
+							</ui-select>
+						</div>
+						
+						<button class="btn btn-primary btn-block" style="margin-bottom:60px !important" ng-click="addToSelectedArmors()">
+						  Dopisz do listy
+						</button>
+					
+					</fieldset>
+				</form>
+			
+			
+			</div>
+		</div>
+	
+        <!-- Tutaj formularz broni 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">7</h1>
-        </div>
+        </div>-->
     </div>
+</div>
+
+<div ui-yield-to="modals"></div>
+<div ui-content-for="modals">
+  <div class="modal" ui-if="modal1" ui-state='modal1'>
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" 
+                  ui-turn-off="modal1">&times;</button>
+          <h4 class="modal-title">Dodaj broń</h4>
+        </div>
+        <div class="modal-body">
+          
+						<div class="form-group">
+						  <label>Nazwa</label>
+						  <input ng-model="weaponName" class="form-control needsclick" placeholder="Np. miecz" type="text">
+						</div>
+						
+						<div class="form-group">
+						  <label>Typ</label>
+							<ui-select ng-model="weaponType.selected" theme="bootstrap">
+							<ui-select-match placeholder="Wybierz lub wyszukaj typ z listy...">{{$select.selected}}</ui-select-match>
+							<ui-select-choices repeat="item in weaponTypes | filter: $select.search">
+							<span ng-bind-html="item | highlight: $select.search"></span>
+							<!--<small ng-bind-html="item.email | highlight: $select.search"></small>-->
+							</ui-select-choices>
+							</ui-select>
+						</div>
+						
+						<div class="form-group">
+						  <label>Kość</label>
+							<ui-select ng-model="weaponPower.selected" theme="bootstrap">
+							<ui-select-match placeholder="Wybierz lub wyszukaj kość z listy...">{{$select.selected}}</ui-select-match>
+							<ui-select-choices repeat="item in weaponPowers | filter: $select.search">
+							<span ng-bind-html="item | highlight: $select.search"></span>
+							<!--<small ng-bind-html="item.email | highlight: $select.search"></small>-->
+							</ui-select-choices>
+							</ui-select>
+						</div>
+        </div>
+        <div class="modal-footer">
+          <button ui-turn-off="modal1" class="btn btn-default">Anuluj</button>
+          <button ui-turn-off="modal1" class="btn btn-primary" ng-click="addWeapon(weaponName, weaponType.selected, weaponPower.selected)">Dodaj broń</button>
+        </div>
+      </div>
+    </div>
+	
+	</div>
+<div ui-content-for="modals">
+	
+  <div class="modal" ui-if="modal2" ui-state='modal2'>
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" 
+                  ui-turn-off="modal2">&times;</button>
+          <h4 class="modal-title">Dodaj zbroję</h4>
+        </div>
+        <div class="modal-body">
+          
+						<div class="form-group">
+						  <label>Nazwa</label>
+						  <input ng-model="armorName" class="form-control needsclick" placeholder="Np. tarcza" type="text">
+						</div>
+						<div class="form-group">
+						  <label>KP</label>
+							<input ng-model="armorPower" class="form-control needsclick" placeholder="Wartość (10&ndash;20)" type="number" min="10" max="20">
+						</div>
+						
+												<div class="form-group">
+						  <label>Rodzaj</label>
+							<ui-select ng-model="armorType.selected" theme="bootstrap">
+							<ui-select-match placeholder="Wybierz lub wyszukaj typ z listy...">{{$select.selected}}</ui-select-match>
+							<ui-select-choices repeat="item in armorTypes | filter: $select.search">
+							<span ng-bind-html="item | highlight: $select.search"></span>
+							<!--<small ng-bind-html="item.email | highlight: $select.search"></small>-->
+							</ui-select-choices>
+							</ui-select>
+						</div>
+						
+						<div class="form-group">
+						  <label>Bonus ze zręczności</label>
+							<input ng-model="armorBonus" class="form-control needsclick" placeholder="ile maksymalie zrecznosci mozna dodac do obrony postaci" type="number" min="0" max="500">
+						</div>
+						
+						
+        </div>
+        <div class="modal-footer">
+          <button ui-turn-off="modal2" class="btn btn-default">Anuluj</button>
+          <button ui-turn-off="modal2" class="btn btn-primary"  ng-click="addArmor(armorName, armorPower, armorType.selected, armorBonus)">Dodaj zbroję</button>
+        </div>
+      </div>
+    </div>
+	
+  </div>
 </div>
