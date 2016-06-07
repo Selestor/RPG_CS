@@ -1,7 +1,13 @@
-<div class="app">
+<div class="app  has-navbar-top has-navbar-bottom">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Kreator postaci - Dodatkowe info
+            Nowa postać
+        </div>
+		
+		<div class="btn-group pull-right">
+          <div class="btn ng-scope">
+            <i class="fa fa-hourglass-end"></i> Krok 6.
+          </div>
         </div>
     </div>
 
@@ -21,9 +27,76 @@
     </div>
 
     <div class="app-body">
-        <!-- Tutaj formularz dodatkowych informacji -->
+	
+	
+	
+		<div class="app-content section">
+		
+			<div class="section section-wide">
+				<div class="btn-group justified nav-tabs">
+				  <a ui-toggle="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb normalny
+				  </a>
+				  <a ui-turn-on="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+					  Tryb domowy
+				  </a> 
+				</div>
+			</div>
+			
+			<div class="scrollable-content">
+			
+			
+				<form class="ng-pristine ng-valid" role="form">
+					<fieldset>
+						
+						<legend>Ekwipunek</legend>
+						
+						<ol>
+							<li ng-repeat="item in stuffList">{{ item.name }}, <b>{{ item.quantity }}</b>, <small><a ng-click="removeFromStuff(item.name)">usuń</a></li>
+						</ol>
+						
+						<div class="form-group">
+						  <label>Nazwa</label>
+						  <input ng-model="stuffName" class="form-control needsclick" placeholder="Np. ząb mądrości" type="text">
+						</div>
+						<div class="form-group">
+						  <label>Ilość</label>
+						  <input ng-model="stuffQuantity" class="form-control needsclick" placeholder="Podaj ilość" type="number" min="1">
+						</div>
+						
+						<a href="" ui-turn-on="modal1" class="btn btn-default" ng-click="addToStuff(stuffName, stuffQuantity)" style="margin-bottom:30px">Dodaj do ekwipunku</a>
+						
+					</fieldset>
+					
+					<fieldset>
+					
+						<legend>Opis postaci</legend>
+						
+						<div class="form-group" style="margin-bottom:30px">
+						  <textarea ng-model="description" class="form-control needsclick" placeholder="Napisz krótką historię postaci" type="text"></textarea>
+						</div>
+						
+					</fieldset>
+					
+					<fieldset style="margin-bottom:60px">
+					
+						<legend>Notatki</legend>
+						
+						<div class="form-group">
+						  <textarea ng-model="notes" class="form-control needsclick" placeholder="Cokolwiek co chesz jeszcze uwzględnić..." type="text"></textarea>
+						</div>
+						
+					</fieldset>
+				</form>
+			
+			
+			</div>
+		</div>
+	
+	
+        <!-- Tutaj formularz dodatkowych informacji 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">9</h1>
-        </div>
+        </div>-->
     </div>
 </div>
