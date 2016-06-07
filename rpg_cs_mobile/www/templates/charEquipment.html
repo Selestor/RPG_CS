@@ -1,7 +1,7 @@
-<div class="app" ng-swipe-right="swipeRight()">
+<div class="app has-navbar-top" ng-swipe-right="swipeRight()">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Postać - Ekwipunek
+            Postać &ndash; Ekwipunek
         </div>
 
         <div class="btn-group pull-left">
@@ -10,7 +10,7 @@
             </div>
         </div>
     </div>
-
+<!--
     <div class="navbar navbar-app navbar-fixed-bottom">
         <div class="btn-group pull-right">
             <div class="btn btn-navbar">
@@ -18,11 +18,62 @@
             </div>
         </div>
     </div>
-
+-->
     <div class="app-body">
-        <!-- Tutaj podstawowy ekwipunek -->
+	
+		
+	
+		<div class="app-content">
+			<div class="scrollable-content section">
+			
+				
+						<div class="panel panel-default ng-scope">
+        <div class="panel-heading">
+          <h3 class="panel-title">Yord, Gnom</h3>
+        </div>
+        <div class="panel-body ng-binding">
+           <p>Czarodziej / bard 1</p>
+		   
+		   <div style="display:flex">
+				<div style="width:50%">
+					<b>PW:</b> 45
+				</div>
+				
+				<div>
+					<b>KP:</b> 45
+				</div>
+			</div>
+        </div>
+      </div>
+	  
+	  
+			<h3 class="page-header">Broń</h3>
+			
+			<ul>
+				<li ng-repeat="weapon in weaponList">{{ weapon.name }}, <small>{{ weapon.type }}, {{ weapon.power }}</small></li>
+			</ul>
+			
+			
+	  
+			<h3 class="page-header" style="margin-top:20px">Zbroje</h3>
+			
+			<ul>
+				<li ng-repeat="armor in armorList">{{ armor.name }}, <small>{{ armor.type }}, {{ armor.power }}</small></li>
+			</ul>
+			
+	
+			<h3 class="page-header" style="margin-top:20px">Plecak</h3>
+			
+						<ul style="margin-bottom:30px">
+							<li ng-repeat="item in stuffList">{{ item.name }}, <b>{{ item.quantity }}</b></li>
+						</ul>
+			
+			</div>
+		</div>
+	
+        <!-- Tutaj podstawowy ekwipunek 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">13</h1>
-        </div>
+        </div>-->
     </div>
 </div>

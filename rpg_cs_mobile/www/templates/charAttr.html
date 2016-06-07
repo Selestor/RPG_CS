@@ -1,7 +1,7 @@
-<div class="app" ng-swipe-left="swipeLeft()">
+<div class="app has-navbar-top" ng-swipe-left="swipeLeft()">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Postać - Atrybuty
+            Postać &ndash; atrybuty
         </div>
 
         <div class="btn-group pull-left">
@@ -12,9 +12,66 @@
     </div>
 
     <div class="app-body">
-        <!-- Tutaj atrybuty postaci -->
+	
+		<div class="app-content">
+		
+		
+		
+			<div class="scrollable-content section">
+			
+						<div class="panel panel-default ng-scope">
+        <div class="panel-heading">
+          <h3 class="panel-title">Yord, Gnom</h3>
+        </div>
+        <div class="panel-body ng-binding">
+           <p>Czarodziej / bard 1</p>
+		   
+		   <div style="display:flex">
+				<div style="width:50%">
+					<b>PW:</b> 45
+				</div>
+				
+				<div>
+					<b>KP:</b> 45
+				</div>
+			</div>
+        </div>
+      </div>
+		
+			
+			<h3 class="page-header">Atrybuty</h3>
+			
+			<table style="width:100%">
+				<thead class="stylTabelki">
+					<tr>
+						<th>Nazwa</th>
+						<th>Wartość</th>
+						<th></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+				
+					<tr ng-repeat="item in attrList" class="stylTabelki">
+						<td>{{ item.name }}</td>
+						<td>{{ item.value }}</td>
+						<td>+3</td>
+					</tr>
+				
+				</tbody>
+			</table>
+			
+			<h3 class="page-header" style="margin-top:60px">Biegłość</h3>
+			
+			<div style="font-size:4em;font-weight:bold;text-align:center;padding-bottom:60px">+3</div>
+		
+		</div>
+		</div>
+	
+	
+        <!-- Tutaj atrybuty postaci 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
             <h1 style="text-align: center; vertical-align: middle; color: lawngreen; font-weight: bold; font-size: 100px;">11</h1>
-        </div>
+        </div>-->
     </div>
 </div>

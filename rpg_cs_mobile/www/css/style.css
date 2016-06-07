@@ -10,3 +10,7 @@
     margin-right: -15px;
     margin-left: -15px;
 }
+
+.stylTabelki td,  .stylTabelki th {padding: 10px 20px}
+.stylTabelki td:first-child,  .stylTabelki th:first-child {padding-left:0 !important}
+.stylTabelki td:last-child,  .stylTabelki th:last-child {padding-right:0 !important}
