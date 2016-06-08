@@ -17,4 +17,8 @@ mainApp.controller('CharAttrController', function($scope, $location){
 		{name : 'Charyzma', value : 3},
 	];
 	
+	// funkcja liczaca modyfikator zadanego atrybutu
+	function calculateModifier(attributeValue) {
+    return ((attributeValue - 10)/2) ;
+	}
 });
