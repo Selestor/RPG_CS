@@ -146,7 +146,6 @@
 							<ui-select-match placeholder="Wybierz lub wyszukaj typ z listy...">{{$select.selected}}</ui-select-match>
 							<ui-select-choices repeat="item in weaponTypes | filter: $select.search">
 							<span ng-bind-html="item | highlight: $select.search"></span>
-							<!--<small ng-bind-html="item.email | highlight: $select.search"></small>-->
 							</ui-select-choices>
 							</ui-select>
 						</div>
@@ -157,7 +156,6 @@
 							<ui-select-match placeholder="Wybierz lub wyszukaj kość z listy...">{{$select.selected}}</ui-select-match>
 							<ui-select-choices repeat="item in weaponPowers | filter: $select.search">
 							<span ng-bind-html="item | highlight: $select.search"></span>
-							<!--<small ng-bind-html="item.email | highlight: $select.search"></small>-->
 							</ui-select-choices>
 							</ui-select>
 						</div>
@@ -170,7 +168,8 @@
     </div>
 	
 	</div>
-<div ui-content-for="modals">
+<div ui-yield-to="modals2"></div>
+<div ui-content-for="modals2">
 	
   <div class="modal" ui-if="modal2" ui-state='modal2'>
     <div class="modal-backdrop in"></div>
