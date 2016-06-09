@@ -19,12 +19,12 @@
         </div>
 		
         <div class="btn-group">
-		<a class="btn btn-navbar" ui-turn-on="modal1" href="" ><i class="fa fa-plus-circle"></i> Dodaj broń</a>
+		<a ng-show="!normal_mode" class="btn btn-navbar" ui-turn-on="modal1" href="" ><i class="fa fa-plus-circle"></i> Dodaj broń</a>
 
         </div>
 		
         <div class="btn-group">
-		<a class="btn btn-navbar" ui-turn-on="modal2" href="" ><i class="fa fa-plus-circle"></i> Dodaj zbroję</a>
+		<a ng-show="!normal_mode" class="btn btn-navbar" ui-turn-on="modal2" href="" ><i class="fa fa-plus-circle"></i> Dodaj zbroję</a>
 
         </div>
 
@@ -43,10 +43,10 @@
 		
 			<div class="section section-wide">
 				<div class="btn-group justified nav-tabs">
-				  <a ui-toggle="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+				  <a ng-class="{'active': normal_mode}" class="btn btn-default" ng-click="setNormalMode(true);">
 					  Tryb normalny
 				  </a>
-				  <a ui-turn-on="lightbulb" ui-class="{'active': lightbulb}" class="btn btn-default">
+				  <a ng-class="{'active': !normal_mode}" class="btn btn-default" ng-click="setNormalMode(false);">
 					  Tryb domowy
 				  </a> 
 				</div>
