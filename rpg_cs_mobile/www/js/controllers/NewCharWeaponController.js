@@ -6,12 +6,16 @@ mainApp.controller('NewCharWeaponController', function($scope){
 
 	$scope.weapon = {}
 	$scope.weaponList = [
-		{name : 'Miecz', type: 'Cięte', power : 'K4'},
-		{name : 'Nóż', type: 'Cięte', power : 'K6'},
-		{name : 'Włócznia', type: 'Kłute', power : 'K20'},
-		{name : 'Łuk', type: 'Kłute', power : 'K12'},
-		{name : 'Czołg', type: 'Miażdżone', power : 'K12'},
-		{name : 'Młotek', type: 'Miażdżone', power : 'K20'}
+		{name : 'Miecz, Krótki', type: 'Kłute', power : 'k6'},
+		{name : 'Miecz, Długi', type: 'Cięte', power : 'k8'},
+		{name : 'Nóż', type: 'Kłute', power : 'k4'},
+		{name : 'Włócznia', type: 'Kłute', power : 'k6'},
+		{name : 'Łuk, Długi', type: 'Kłute', power : 'k10'},
+		{name : 'Kusza, Lekka', type: 'Kłute', power : 'k10'},
+		{name : 'Kusza, Ciężka', type: 'Kłute', power : 'k12'},
+		{name : 'Kusza, Ręczna', type: 'Kłute', power : 'k6'},
+		{name : 'Łuk, Krótki', type: 'Kłute', power : 'k6'},
+		{name : 'Młot Bojowy', type: 'Miażdżone', power : 'k8'}
 	];
 	
 	$scope.selectedWeapons = [];
@@ -29,8 +33,9 @@ mainApp.controller('NewCharWeaponController', function($scope){
 	
 	$scope.armor = {}
 	$scope.armorList = [
-		{name : 'Nazwa', power : 'Klasa pancerza', type : 'Lekka', bonus: 20},
-		{name : 'Nazwa', power : 'Klasa pancerza', type : 'Lekka', bonus: 1}
+		{name : 'Zbroja Ćwiekowa', power : '12', type : 'Lekka', bonus: 10},
+		{name : 'Kolczuga', power : '16', type : 'Średnia', bonus: 2},
+		{name : 'Pełna Zbroja Płytowa', power : '18', type : 'Ciężka', bonus: 0}
 	];
 	
 	$scope.selectedArmors = [];
@@ -47,7 +52,7 @@ mainApp.controller('NewCharWeaponController', function($scope){
 	
 	
 	$scope.weaponTypes = ['Cięte', 'Kłute', 'Miażdżone'];
-	$scope.weaponPowers = ['K4', 'K6', 'K8', 'K10', 'K12', 'K20'];
+	$scope.weaponPowers = ['k4', 'k6', 'k8', 'k10', 'k12', 'k20'];
 	$scope.weaponPower = {}
 	$scope.weaponType = {}
 	
