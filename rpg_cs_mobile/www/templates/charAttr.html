@@ -1,7 +1,7 @@
 <div class="app has-navbar-top" ng-swipe-left="swipeLeft()">
     <div class="navbar navbar-app navbar-fixed-top">
         <div class="navbar-brand navbar-brand-center">
-            Postać &ndash; atrybuty
+            Postać &ndash; Atrybuty
         </div>
 
         <div class="btn-group pull-left">
@@ -21,10 +21,10 @@
 			
 						<div class="panel panel-default ng-scope">
         <div class="panel-heading">
-          <h3 class="panel-title">Yord, Gnom</h3>
+          <h3 class="panel-title">{{ current.name }} &ndash; {{ current.race }} </h3>
         </div>
         <div class="panel-body ng-binding">
-           <p>Czarodziej / bard 1</p>
+           <p>{{ current.type }}, poziom: {{ current.level }}</p>
 		   
 		   <div style="display:flex">
 				<div style="width:50%">
@@ -52,10 +52,10 @@
 				
 				<tbody>
 				
-					<tr ng-repeat="item in attrList" class="stylTabelki">
+					<tr ng-repeat="item in current.attrList" class="stylTabelki">
 						<td>{{ item.name }}</td>
 						<td>{{ item.value }}</td>
-						<td>+3</td>
+						<td>+{{ item.inputValue }}</td>
 					</tr>
 				
 				</tbody>

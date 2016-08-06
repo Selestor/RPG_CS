@@ -2,7 +2,9 @@
  * Created by pyrkap on 28.05.2016.
  */
 
-mainApp.controller('NewCharWeaponController', function($scope){
+mainApp.controller('NewCharWeaponController', function($rootScope, $scope){
+
+	SaveFifthStep($rootScope, $scope);
 
 	$scope.weapon = {}
 	$scope.weaponList = [
@@ -67,3 +69,12 @@ mainApp.controller('NewCharWeaponController', function($scope){
 		$scope.selectedArmors.push({name : name, power: power, type: type, bonus: bonus });
 	};
 });
+
+
+function SaveFifthStep($rootScope, $scope){
+	
+	$scope.SaveFifthStep = function(selectedWeapons, selectedArmors){
+		$rootScope.newChar.selectedWeapons = selectedWeapons;
+		$rootScope.newChar.selectedArmors = selectedArmors;		
+	};
+}

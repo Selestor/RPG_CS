@@ -20,10 +20,10 @@
 				
 						<div class="panel panel-default ng-scope">
         <div class="panel-heading">
-          <h3 class="panel-title">Yord, Gnom</h3>
+          <h3 class="panel-title">{{ current.name }} &ndash; {{ current.race }} </h3>
         </div>
         <div class="panel-body ng-binding">
-           <p>Czarodziej / bard 1</p>
+           <p>{{ current.type }}, poziom: {{ current.level }}</p>
 		   
 		   <div style="display:flex">
 				<div style="width:50%">
@@ -41,15 +41,15 @@
 			<h3 class="page-header">Umiejętności</h3>
 			
 			<ul>
-				<li ng-repeat="item in abilityList">{{ item.name }}, <small>{{ item.value }}</small></li>
+				<li ng-repeat="item in current.abilityList">{{ item.name }}</li>
 			</ul>
 			
 			
 	  
-			<h3 class="page-header">Atuty</h3>
+			<h3 class="page-header" style="margin-top:30px">Atuty</h3>
 			
-			<ul>
-				<li ng-repeat="item in classTrumpList">{{ item.name }}</li>
+			<ul style="padding-bottom: 30px !important">
+				<li ng-repeat="item in current.classTrumpList">{{ item.name }}</li>
 			</ul>
 			
 	

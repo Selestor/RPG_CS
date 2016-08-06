@@ -25,7 +25,7 @@
 
         <div class="btn-group pull-right">
             <div class="btn btn-navbar">
-                <a href="#newCharWeapon" class="btn btn-link">Dalej <i class="fa fa-caret-right"></i></a>
+                <a href="#newCharWeapon" class="btn btn-link" ng-click="SaveFourthStep(classTrumpList, additionalTrumpList)">Dalej <i class="fa fa-caret-right"></i></a>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
 			
 			<div class="scrollable-content">
 			
-			<form class="ng-pristine ng-valid form-horizontal" role="form" ng-submit="login()">
+			<form class="ng-pristine ng-valid form-horizontal" role="form">
 					<fieldset>
 						<legend>Umiejętności klasy: <b>{{ selectedClass }}</b></legend>
 			
@@ -60,7 +60,7 @@
 						
 						<div>{{ item.name }}</div>
 						<div>
-							<ui-switch class="ng-pristine ng-untouched ng-valid ng-isolate-scope switch switch-transition-enabled active" ng-model="ability.isChecked"><div class="switch-handle"></div></ui-switch>
+							<ui-switch class="ng-pristine ng-untouched ng-valid ng-isolate-scope switch switch-transition-enabled active" ng-model="item.isChecked" ng-click="$event.stopPropagation()"><div class="switch-handle"></div></ui-switch>
 						</div>
 					</h4>
 				  </div>
@@ -76,7 +76,7 @@
 					
 					<fieldset>
 					
-						<legend>Dodane atuty</legend>
+						<legend ng-if="additionalTrumpList.length > 0">Dodane atuty</legend>
 						
 						
 			<div class="panel-group" ui-state="myAccordion2">
@@ -87,7 +87,7 @@
 						
 						<div>{{ item.name }}</div>
 						<div>
-							<ui-switch class="ng-pristine ng-untouched ng-valid ng-isolate-scope switch switch-transition-enabled active" ng-model="ability.isChecked"><div class="switch-handle"></div></ui-switch>
+							<ui-switch class="ng-pristine ng-untouched ng-valid ng-isolate-scope switch switch-transition-enabled active" ng-model="item.isChecked" ng-click="$event.stopPropagation()"><div class="switch-handle"></div></ui-switch>
 						</div>
 					</h4>
 				  </div>
@@ -123,7 +123,7 @@
 
 <div ui-yield-to="modals"></div>
 <div ui-content-for="modals">
-  <div class="modal" ui-if="modal1" ui-state='modal1'>
+  <div class="modal" ui-if="modal1" ui-state='modal1' class="ng-scope">
     <div class="modal-backdrop in"></div>
     <div class="modal-dialog">
       <div class="modal-content">
@@ -138,10 +138,14 @@
 						  <label>Nazwa atutu</label>
 						  <input ng-model="newAbiblityName" class="form-control needsclick" placeholder="Np. skakanie z mostu" type="text">
 						</div>
+						<div class="form-group">
+						  <label>Opis atutu</label>
+						  <input ng-model="newAbiblityDescription" class="form-control needsclick" placeholder="Np. moc poruszenia swoją osobą całego miasta przez jeden dzień" type="text">
+						</div>
         </div>
         <div class="modal-footer">
           <button ui-turn-off="modal1" class="btn btn-default">Anuluj</button>
-          <button ui-turn-off="modal1" class="btn btn-primary">Dodaj atut</button>
+          <button ui-turn-off="modal1" class="btn btn-primary" ng-click="AddTrump(newAbiblityName, newAbiblityDescription)">Dodaj atut</button>
         </div>
       </div>
     </div>

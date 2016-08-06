@@ -4,6 +4,14 @@
 
 mainApp.controller("NewCharController", function($rootScope, $scope){
 
+	NormalModeFlag($rootScope);
+	FillControls($scope);
+	SaveFirstStep($rootScope, $scope);
+	Cancel($rootScope, $scope);
+});
+
+function NormalModeFlag($rootScope){
+
 	/**
 	 *
 	 * Flaga normal_mode - gwarantująca przechowanie informacji czy użytkownik wybrał tryb normalny czy domowy.
@@ -22,6 +30,10 @@ mainApp.controller("NewCharController", function($rootScope, $scope){
 	$rootScope.setNormalMode = function(flag){
 		$rootScope.normal_mode = flag;
 	};
+
+}
+
+function FillControls($scope){
 
 	$scope.race = {};
 	 // $scope.race.selected = $scope.raceList[3];
@@ -82,9 +94,24 @@ mainApp.controller("NewCharController", function($rootScope, $scope){
 		{ name : 'Zaklinacz' },
 		{ name : 'Czarnoksiężnik' }		
 	];
+}
 
+function SaveFirstStep($rootScope, $scope){
+	
+    if ($rootScope.newChar === undefined || $rootScope.newChar == null)
+		$rootScope.newChar = new Object();
+	
+	$scope.SaveFirstStep = function(name, race, type, level){
+		$rootScope.newChar.name = name;
+		$rootScope.newChar.race = race;
+		$rootScope.newChar.type = type;
+		$rootScope.newChar.level = level;
+	};
+}
 
-    
+function Cancel($rootScope, $scope){
 
-
-});
+	$scope.Cancel = function() {
+		$rootScope.newChar = null;
+	};
+}

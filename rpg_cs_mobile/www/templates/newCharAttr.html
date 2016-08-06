@@ -21,7 +21,7 @@
         <!-- Jeśli nie pozwalamy na edycję, kolejny krok jest już niepotrzebny -->
         <div ng-show="editEnabled" class="btn-group pull-right">
             <div class="btn btn-navbar">
-                <a href="#newCharAbilities" class="btn btn-link">Dalej <i class="fa fa-caret-right"></i></a>
+                <a href="#newCharAbilities" class="btn btn-link" ng-click="SaveSecondStep(attrList)">Dalej <i class="fa fa-caret-right"></i></a>
             </div>
         </div>
     </div>
@@ -43,14 +43,14 @@
 			</div>
 			<div class="scrollable-content">
 			
-				<form class="ng-pristine ng-valid form-horizontal" role="form" ng-submit="login()">
+				<form class="ng-pristine ng-valid form-horizontal" role="form">
 					<fieldset>
 						
 						<legend>Atrybuty</legend>
 						
 						<div class="form-group " ng-repeat="attr in attrList">
 							<label class="col-sm-3 control-label">{{attr.name}}</label>
-							<div class="col-sm-6"><input class="form-control needsclick" placeholder="Wartość (0&ndash;20)" type="number" min="0" max="20"/></div>
+							<div class="col-sm-6"><input class="form-control needsclick" text="{{attr.inputValue}}" placeholder="Wartość (0&ndash;20)" type="number" min="0" max="20"/></div>
 							<div class="col-sm-1">{{attr.value}}</div>
 						</div>
 						

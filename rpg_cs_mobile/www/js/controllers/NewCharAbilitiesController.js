@@ -2,7 +2,10 @@
  * Created by pyrkap on 28.05.2016.
  */
 
-mainApp.controller('NewCharAbilitiesController', function($scope){
+mainApp.controller('NewCharAbilitiesController', function($rootScope, $scope){
+
+	SaveThirdStep($rootScope, $scope);
+	
     $scope.abilityList = [
 		{name : 'Religia', isChecked : false},
 		{name : 'Ukrywanie się', isChecked : false},
@@ -17,3 +20,10 @@ mainApp.controller('NewCharAbilitiesController', function($scope){
 		{name : 'Natura', isChecked : false}
 	];
 });
+
+function SaveThirdStep($rootScope, $scope){
+	
+	$scope.SaveThirdStep = function(abilityList){
+		$rootScope.newChar.abilityList = abilityList;
+	};
+}

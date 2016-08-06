@@ -14,13 +14,13 @@
     <div class="navbar navbar-app navbar-fixed-bottom">
         <div class="btn-group pull-left">
             <div class="btn btn-navbar">
-                <a back class="btn btn-link"><i class="fa fa-caret-left"></i> Anuluj</a>
+                <a back class="btn btn-link" ng-click="Cancel()"><i class="fa fa-caret-left"></i> Anuluj</a>
             </div>
         </div>
 
         <div class="btn-group pull-right">
             <div class="btn btn-navbar">
-                <a href="#newCharAttr" class="btn btn-link">Dalej <i class="fa fa-caret-right"></i></a>
+                <a href="#newCharAttr" class="btn btn-link" ng-click="SaveFirstStep(name, race.selected.name, type.selected.name, level)">Dalej <i class="fa fa-caret-right"></i></a>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
 			</div>
 			<div class="scrollable-content">
 			
-				<form class="ng-pristine ng-valid" role="form" ng-submit="login()">
+				<form class="ng-pristine ng-valid" role="form">
 					<fieldset>
 						
 						<legend>Podstawowe dane</legend>
