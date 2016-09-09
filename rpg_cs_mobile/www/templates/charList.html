@@ -24,14 +24,16 @@
 			<div class="list-group">
 				<span class="list-group-item">
 					<div class="fourColumnsInAList fourColumnsInAList-header">
+						<div>ID</div>
 						<div>Imię</div>
 						<div>Rasa</div>
 						<div>Klasa</div>
 						<div>Poziom</div>
 					</div>
 				</span>
-				<a ng-repeat="item in charList" href="" class="list-group-item" ng-click="goToAttr(item.Id)">
+				<a ng-repeat="item in charList" href="" class="list-group-item" ng-click="goToAttr(item.id)">
 					<div class="fourColumnsInAList">
+						<div>{{ item.id }}</div>
 						<div>{{ item.name }}</div>
 						<div>{{ item.race }}</div>
 						<div>{{ item.type }}</div>

@@ -50,7 +50,7 @@ function SaveCharacter($rootScope) {
 	var json = angular.toJson(charList);
 	alert(json);
 	localStorage.setItem('charList', json);
-
+	localStorage.setItem('lastCharId', lastCharId.toString());
 	$rootScope.newChar = null;
 
 }

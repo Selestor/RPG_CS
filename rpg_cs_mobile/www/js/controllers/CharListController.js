@@ -6,7 +6,9 @@ mainApp.controller("CharListController", function($rootScope, $scope, $location)
     
 	var savedChars = localStorage.getItem('charList');
 	$scope.charList = (savedChars != null) ? JSON.parse(savedChars) : [];
-	
+
+	console.log($scope.charList);
+
 	//localStorage.removeItem("charList"); 
 	
 	
