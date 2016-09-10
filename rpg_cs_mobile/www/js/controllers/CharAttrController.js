@@ -17,5 +17,5 @@ function calculateModifier(attributeValue) {
 }
 
 function calculateProficiency(level){
-    return ((level - 1) / 4) + 2;
+    return Math.floor((level - 1) / 4) + 2;
 }

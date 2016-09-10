@@ -4,7 +4,7 @@
 
 mainApp.controller("NewCharAttrController", function($rootScope, $scope){
     
-    $scope.editEnabled = true;
+   $scope.editEnabled = true;
 	SaveSecondStep($rootScope, $scope);
 	
 	$scope.attrList = [

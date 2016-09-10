@@ -20,37 +20,31 @@
     <div class="app-body">
 	<div class="app-content">
 		<div class="scrollable-content section">
-		
 			<div class="list-group">
 				<span class="list-group-item">
-					<div class="fourColumnsInAList fourColumnsInAList-header">
-						<div>ID</div>
-						<div>Imię</div>
-						<div>Rasa</div>
-						<div>Klasa</div>
-						<div>Poziom</div>
+					<div class="row">
+						<h4 class="col-lg-3">Imię</h4>
+						<h4 class="col-lg-3">Rasa</h4>
+						<h4 class="col-lg-3">Klasa</h4>
+						<h4 class="col-lg-2">Poziom</h4>
+						<h4 class="col-lg-1">Usuń</h4>
 					</div>
 				</span>
-				<a ng-repeat="item in charList" href="" class="list-group-item" ng-click="goToAttr(item.id)">
-					<div class="fourColumnsInAList">
-						<div>{{ item.id }}</div>
-						<div>{{ item.name }}</div>
-						<div>{{ item.race }}</div>
-						<div>{{ item.type }}</div>
-						<div>{{ item.level }}</div>
+				<a ng-repeat="item in charList" href="" class="list-group-item" ng-click="goToAttr(item.Id);">
+					<div class="row">
+						<div class="col-lg-3">{{ item.name }}</div>
+						<div class="col-lg-3">{{ item.race }}</div>
+						<div class="col-lg-3">{{ item.type }}</div>
+						<div class="col-lg-2">{{ item.level }}</div>
+						<div class="col-lg-1">
+							<button class="btn btn-sm btn-danger" ng-click="deleteElement(item.Id, item.name); $event.stopPropagation(); $event.preventDefault();"><i class="fa fa-times"></i></button>
+						</div>
 					</div>
-					<i class="fa fa-chevron-right pull-right"></i>
 				</a>
 			</div>
-			
-			<div class="btn-group">
-			  <a href="" class="btn btn-default active" ui-turn-on="button1" ui-state="button1" ui-class="{'active': button1}" ui-exclusion-group="myButtons">1</a>
-			  <a href="" class="btn btn-default" ui-turn-on="button2" ui-state="button2" ui-class="{'active': button2}" ui-exclusion-group="myButtons">2</a>
-			  <a href="" class="btn btn-default" ui-turn-on="button3" ui-state="button3" ui-class="{'active': button3}" ui-exclusion-group="myButtons">3</a>
-			</div>
+		</div>
+	</div>
 		
-		</div>
-		</div>
 	
         <!-- Tutaj lista postaci 
         <div style="width: 90vw; height: 100vh; margin: 30vh auto;">
