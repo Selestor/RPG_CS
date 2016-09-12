@@ -8,8 +8,6 @@ mainApp.controller('CharEquipmentController', function($rootScope, $scope, $loca
     }
 	
 	$scope.current = $rootScope.currentChar;
-	
-	$scope.ArmorClass = calculateAC($scope.current.attrList[1].modifier, $scope.current.selectedArmors[0].power,  $scope.current.selectedArmors[0].type);
 
 	$scope.saveNotes = function(){
 		var charList = JSON.parse(localStorage.getItem("charList"));
@@ -18,7 +16,10 @@ mainApp.controller('CharEquipmentController', function($rootScope, $scope, $loca
 				charList[i].notes = $scope.current.notes;
 		}
 		localStorage.setItem("charList", angular.toJson(charList));
-	}
+	};
+
+	$scope.proficiency = calculateProficiency($scope.current.level);
+	$scope.ArmorClass = calculateAC($scope.current.attrList[1].modifier, $scope.current.selectedArmors[0].power,  $scope.current.selectedArmors[0].type)
 });
 
 function calculateAC(dexAC, armorAC, armorType){
@@ -39,4 +40,8 @@ function calculateAC(dexAC, armorAC, armorType){
 			break;
 	}
 	return (dexAC + parseInt(armorAC));
+}
+
+function calculateProficiency(level){
+    return Math.floor((level - 1) / 4) + 2;
 }

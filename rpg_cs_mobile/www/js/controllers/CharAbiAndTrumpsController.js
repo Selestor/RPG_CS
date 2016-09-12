@@ -11,7 +11,7 @@ mainApp.controller('CharAbiAndTrumpsController', function($rootScope, $scope, $l
     };
 	
 	$scope.current = $rootScope.currentChar;
-
+	$scope.proficiency = calculateProficiency($scope.current.level);
 	$scope.ArmorClass = calculateAC($scope.current.attrList[1].modifier, $scope.current.selectedArmors[0].power,  $scope.current.selectedArmors[0].type)
 });
 
@@ -33,4 +33,8 @@ function calculateAC(dexAC, armorAC, armorType){
 			break;
 	}
 	return (dexAC + parseInt(armorAC));
+}
+
+function calculateProficiency(level){
+    return Math.floor((level - 1) / 4) + 2;
 }
