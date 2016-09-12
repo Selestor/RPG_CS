@@ -12,14 +12,11 @@ mainApp.controller('CharAbiAndTrumpsController', function($rootScope, $scope, $l
 	
 	$scope.current = $rootScope.currentChar;
 	
-	$scope.ArmorClass = calculateAC(calculateModifier($scope.current.attrList[1]), $scope.current.selectedArmors[0].power,  $scope.current.selectedArmors[0].type)
+	console.log($scope.current.attrList[1]);
+	$scope.ArmorClass = calculateAC($scope.current.attrList[1].modifier, $scope.current.selectedArmors[0].power,  $scope.current.selectedArmors[0].type)
 });
 
-function calculateModifier(attributeValue) {
-	return ((attributeValue - 10)/2) ;
-}
-
-function calculateAC(dexAC, armorAC, armorType) 
+function calculateAC(dexAC, armorAC, armorType){
 	if (armorAC === undefined || armorAC == null)
 	{
 		armorAC = 10;
@@ -28,15 +25,13 @@ function calculateAC(dexAC, armorAC, armorType)
 	switch(armorType)
 	{
 		case "Lekka":
-			dexAC = dexAC
 			break;
 		case "Średnia":
-			if (dexAC > 2) dexAC = 2
-			else dexAC = dexAC
+			if (dexAC > 2) dexAC = 2;
 			break;
 		case "Ćiężka":
 			dexAC = 0
 			break;
 	}
-	return (dexAC + armorAC);
+	return (dexAC + parseInt(armorAC));
 }
