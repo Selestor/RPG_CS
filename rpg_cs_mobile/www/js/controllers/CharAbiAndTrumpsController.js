@@ -30,7 +30,7 @@ function calculateAC(dexAC, armorAC, armorType){
 			if (dexAC > 2) dexAC = 2;
 			break;
 		case "Ćiężka":
-			dexAC = 0
+			dexAC = 0;
 			break;
 	}
 	return (dexAC + parseInt(armorAC));

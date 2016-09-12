@@ -101,11 +101,12 @@ function SaveFirstStep($rootScope, $scope){
     if ($rootScope.newChar === undefined || $rootScope.newChar == null)
 		$rootScope.newChar = new Object();
 	
-	$scope.SaveFirstStep = function(name, race, type, level){
+	$scope.SaveFirstStep = function(name, race, type, level, hp){
 		$rootScope.newChar.name = name;
 		$rootScope.newChar.race = race;
 		$rootScope.newChar.type = type;
 		$rootScope.newChar.level = level;
+		$rootScope.newChar.hp = hp;
 	};
 }
 
