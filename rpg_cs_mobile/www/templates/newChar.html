@@ -20,7 +20,7 @@
 
         <div class="btn-group pull-right">
             <div class="btn btn-navbar">
-                <a href="#newCharAttr" class="btn btn-link" ng-click="SaveFirstStep(name, race.selected.name, type.selected.name, level)">Dalej <i class="fa fa-caret-right"></i></a>
+                <a href="#newCharAttr" class="btn btn-link" ng-click="SaveFirstStep(name, race.selected.name, type.selected.name, level, hp)">Dalej <i class="fa fa-caret-right"></i></a>
             </div>
         </div>
     </div>
@@ -75,6 +75,11 @@
 						<div class="form-group">
 						  <label>Poziom</label>
 						  <input ng-model="level" class="form-control needsclick" placeholder="Na którym poziomie będzie gracz danej klasy?" type="number" min="1">
+						</div>
+
+						<div class="form-group">
+							<label>PW</label>
+							<input ng-model="hp" class="form-control needsclick" placeholder="Punkty wytrzymałości" type="number" min="1"/>
 						</div>
 					
 

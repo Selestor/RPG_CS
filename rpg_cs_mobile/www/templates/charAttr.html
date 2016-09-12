@@ -28,7 +28,7 @@
 		   
 		   <div style="display:flex">
 				<div style="width:50%">
-					<b>PW:</b> 45
+					<b>PW:</b> {{ current.hp }}
 				</div>
 				
 				<div>
@@ -55,7 +55,7 @@
 					<tr ng-repeat="item in current.attrList" class="stylTabelki">
 						<td>{{ item.name }}</td>
 						<td>{{ item.value }}</td>
-						<td>+{{ item.modifier }}</td>
+						<td><span ng-if="item.modifier > 0">+</span>{{ item.modifier }}</td>
 					</tr>
 				
 				</tbody>
