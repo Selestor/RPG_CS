@@ -27,12 +27,16 @@
            <p>{{ current.type }}, poziom: {{ current.level }}</p>
 		   
 		   <div style="display:flex">
-				<div style="width:50%">
+				<div style="width:33%">
 					<b>PW:</b> {{ current.hp }}
 				</div>
 				
-				<div>
+				<div style="width:33%">
 					<b>KP:</b> {{ ArmorClass}}
+				</div>
+				
+				<div>
+					<b>Biegłość:</b> +{{ proficiency }}
 				</div>
 			</div>
         </div>
@@ -61,10 +65,6 @@
 				</tbody>
 			</table>
 			
-			<h3 class="page-header" style="margin-top:60px">Biegłość</h3>
-			
-			<div style="font-size:4em;font-weight:bold;text-align:center;padding-bottom:60px">+{{ proficiency }}</div>
-		
 		</div>
 		</div>
 	
