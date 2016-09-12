@@ -74,9 +74,8 @@
 			
 			<h3 class="page-header" style="margin-top:20px">Notatki</h3>
 			
-			<p style="margin-bottom:30px">{{ current.notes }}</p>
-			
-			
+			<textarea style="margin-bottom:30px" ng-model="current.notes" style="display: block; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"></textarea>
+			<button type="button" class="btn btn-primary" ng-click="saveNotes()" style="width: 100%;">Zapisz</button>
 			
 			</div>
 		</div>

@@ -9,7 +9,16 @@ mainApp.controller('CharEquipmentController', function($rootScope, $scope, $loca
 	
 	$scope.current = $rootScope.currentChar;
 	
-	$scope.ArmorClass = calculateAC($scope.current.attrList[1].modifier, $scope.current.selectedArmors[0].power,  $scope.current.selectedArmors[0].type)
+	$scope.ArmorClass = calculateAC($scope.current.attrList[1].modifier, $scope.current.selectedArmors[0].power,  $scope.current.selectedArmors[0].type);
+
+	$scope.saveNotes = function(){
+		var charList = JSON.parse(localStorage.getItem("charList"));
+		for(var i = 0; i < charList.length; i ++){
+			if(charList[i].Id == $scope.current.Id)
+				charList[i].notes = $scope.current.notes;
+		}
+		localStorage.setItem("charList", angular.toJson(charList));
+	}
 });
 
 function calculateAC(dexAC, armorAC, armorType){
