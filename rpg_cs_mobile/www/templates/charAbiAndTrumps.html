@@ -31,7 +31,7 @@
 				</div>
 				
 				<div>
-					<b>KP:</b> 45
+					<b>KP:</b> {{ ArmorClass}}
 				</div>
 			</div>
         </div>
@@ -41,7 +41,9 @@
 			<h3 class="page-header">Umiejętności</h3>
 			
 			<ul>
-				<li ng-repeat="item in current.abilityList">{{ item.name }}</li>
+				<li ng-repeat="item in current.abilityList" ng-if="item.isChecked == true" >
+				{{ item.name }}
+				</li>
 			</ul>
 			
 			
@@ -49,7 +51,7 @@
 			<h3 class="page-header" style="margin-top:30px">Atuty</h3>
 			
 			<ul style="padding-bottom: 30px !important">
-				<li ng-repeat="item in current.classTrumpList">{{ item.name }}</li>
+				<li ng-repeat="item in current.classTrumpList" ng-if="item.isChecked == true">{{ item.name }}</li>
 			</ul>
 			
 	
