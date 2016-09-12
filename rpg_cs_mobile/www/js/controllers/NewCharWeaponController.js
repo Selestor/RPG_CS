@@ -43,6 +43,8 @@ mainApp.controller('NewCharWeaponController', function($rootScope, $scope){
 	$scope.selectedArmors = [];
 
 	$scope.addToSelectedArmors = function(){
+		if($scope.selectedArmors.length > 0)
+			$scope.selectedArmors = [];
 		$scope.selectedArmors.push($scope.armor.selected);
 	};
 	

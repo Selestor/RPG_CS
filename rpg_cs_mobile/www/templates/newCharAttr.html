@@ -48,10 +48,10 @@
 						
 						<legend>Atrybuty</legend>
 						
-						<div class="form-group " ng-repeat="attr in attrList">
+						<div class="form-group " ng-repeat="(index,attr) in attrList">
+							{{index}}
 							<label class="col-sm-3 control-label">{{attr.name}}</label>
-							<div class="col-sm-6"><input class="form-control needsclick" value="{{attr.inputValue}}" placeholder="Wartość (0&ndash;20)" type="number" min="0" max="20"/></div>
-							<div class="col-sm-1">{{attr.value}}</div>
+							<div class="col-sm-6"><input class="form-control needsclick" value="{{attr.value}}" placeholder="Wartość (0&ndash;20)" type="number" min="0" max="20" ng-model="attrList[index].value"/></div>
 						</div>
 						
 					</fieldset>

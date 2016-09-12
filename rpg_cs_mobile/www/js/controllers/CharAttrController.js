@@ -9,11 +9,14 @@ mainApp.controller('CharAttrController', function($rootScope, $scope, $location)
 	
 	$scope.current = $rootScope.currentChar;
     $scope.proficiency = calculateProficiency($scope.current.level);
+    
+    for(var i = 0; i < $scope.current.attrList.length; i++){
+        $scope.current.attrList[i].modifier = calculateModifier($scope.current.attrList[i].value);
+    }
 });
 
-// funkcja liczaca modyfikator zadanego atrybutu
 function calculateModifier(attributeValue) {
-	return ((attributeValue - 10)/2) ;
+	return Math.floor((attributeValue - 10)/2) ;
 }
 
 function calculateProficiency(level){
